@@ -5,6 +5,11 @@ Vue.component("button-counter", {
       count: 0
     };
   },
+  methods: {
+    show() {
+      alert("The value is " + this.count);
+    }
+  },
   template: `
   <button v-on:click='count++'>You clicked me {{count}} times.</button>
   `
