@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button-counter></button-counter>
+      <br />
+      <button-counter></button-counter>
+      <br />
+      <button-counter></button-counter>
+      <br />
+      <button-counter></button-counter>
+      <br />
+    </div>
+
+    <div id="app2">
+      <div :style="{fontSize:postFontSize + 'em'}">
+        <blog-post
+          v-for="(post, index) in posts"
+          v-bind:key="post.id"
+          v-bind:post="post"
+          v-on:enlarge-text="onEnlargeText"
+        ></blog-post>
+      </div>
+    </div>
+
+    <div id="app3">
+      <custom-input v-model="searchText"></custom-input>
+      <p>You input: {{ searchText }}</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

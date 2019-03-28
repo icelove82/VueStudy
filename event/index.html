@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="counter += 1">Add 1</button>
+      <p>The button above has been clicked {{ counter }} times.</p>
+    </div>
+
+    <div id="app2">
+      <button v-on:click="greet">Greet</button>
+    </div>
+
+    <div id="app3">
+      <button v-on:click="say('hi')">Say hi</button>
+      <button v-on:click="say('what')">Say what</button>
+    </div>
+
+    <div id="app4">
+      <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+        Submit
+      </button>
+    </div>
+
+    <div id="app5">
+      <input v-on:keyup.enter="submit" type="text" name="" id="" />
+      <input v-on:keyup.ctrl.enter="submit" type="text" name="" id="" />
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

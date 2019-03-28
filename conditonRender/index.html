@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-if="awesome">Vue is awesome!</h1>
+      <h1 v-else>Oh no :-)</h1>
+    </div>
+
+    <div id="app2">
+      <template v-if="code==='a'">
+        <h1>Title a</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+      </template>
+
+      <template v-else-if="code==='b'">
+        <h1>Title b</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+      </template>
+
+      <template v-else>
+        <h1>Title c</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+      </template>
+    </div>
+
+    <div id="app3">
+      <p>No Key</p>
+      <template v-if="loginType==='username'">
+        <label>Username</label>
+        <input placeholder="Enter you Username" type="text" />
+      </template>
+      <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter you Email" type="text" />
+      </template>
+    </div>
+
+    <div id="app4">
+      <p>No Key</p>
+      <template v-if="loginType==='username'">
+        <label>Username</label>
+        <input placeholder="Enter you Username" type="text" key="username-input"/>
+      </template>
+      <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter you Email" type="text" key="email-input"/>
+      </template>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <ul id="app">
+      <li v-for="item in items">
+        {{ item.message }}
+      </li>
+    </ul>
+
+    <ul id="app2">
+      <li v-for="(item, index) in items" :key="index">
+        {{ parentMessage }} - {{ index }} - {{ item.message }} + {{ item.add }}
+      </li>
+    </ul>
+
+    <ul id="app3">
+      <label>All item is: </label>
+      <span v-for="item in numbers">{{ item }}</span>
+      <br />
+      <label>Even item is: </label>
+      <li v-for="item in evenNumbers">
+        {{ item }}
+      </li>
+    </ul>
+
+    <div id="app4">
+      <template v-for="item in items">
+        <span>{{ item.msg }}</span>
+        <br />
+      </template>
+    </div>
+
+    <div id="app5">
+      <h5>v-for and v-if inline</h5>
+      <template v-for="item in todos" v-if="item.isComplete">
+        <p>{{ item.title }}</p>
+        <span>{{ item.mission }}</span>
+      </template>
+    </div>
+
+    <div id="app6">
+      <h5>v-for and v-if in 2 depth</h5>
+      <ul v-if="visible">
+        <li v-for="item in todos">
+          <p>{{ item.title }}</p>
+          <span>{{ item.mission }}</span>
+        </li>
+      </ul>
+      <span v-else>Nothing to listup.</span>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      // v-model -> input event // v-model.lazy -> change event
+      <input v-model="message" placeholder="edit me" type="text" />
+      <p>Message is : {{ message }}</p>
+    </div>
+
+    <div id="app2">
+      <span>Multiline message is:</span>
+      <p style="white-space: pre-line">{{ message }}</p>
+      <br />
+      <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    </div>
+
+    <div id="app3">
+      <input type="checkbox" id="checkbox" v-model="checked" />
+      <label for="checkbox">{{ checked }}</label>
+    </div>
+
+    <div id="app4">
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+      <label for="mike">Mike</label>
+      <br />
+      <span>Checked names: {{ checkedNames }}</span>
+    </div>
+
+    <div id="app5">
+      <input type="radio" id="one" value="One" v-model="picked" />
+      <label for="one">One</label>
+      <br />
+      <input type="radio" id="two" value="Two" v-model="picked" />
+      <label for="two">Two</label>
+      <br />
+      <span>Picked: {{ picked }}</span>
+    </div>
+
+    <div id="app6">
+      <select v-model="selected">
+        <option disabled value="">Please select:</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <br />
+      <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="app7">
+      <select v-model="selected" multiple style="width: 50px">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <br />
+      <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="app8">
+      <select v-model="selected">
+        // 动态绑定
+        <option v-for="(item, index) in options" v-bind:value="item.value">
+          {{ item.text }}
+        </option>
+      </select>
+      <br />
+      <span>Selected: {{ selected }}</span>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
